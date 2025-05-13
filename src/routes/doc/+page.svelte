@@ -29,8 +29,7 @@ cd &lt;votre‑repo&gt;</code></pre>
 
             <article class="step">
                 <h2>3. Créer <code>.env</code></h2>
-                <pre><code class="language-bash">touch .env
-nano .env</code></pre>
+                <pre><code class="language-bash"> nano .env</code></pre>
                 <pre><code class="language-env">APP_NAME=nom_de_lapp</code></pre>
                 <p class="note">Le nom doit correspondre exactement au dossier de l’application.</p>
             </article>

@@ -4,7 +4,7 @@
 
 	let tabs = [
 		{ name: 'Home', url: '/' },
-		{ name: 'About', url: '/about' },
+		{ name: 'Doc', url: '/doc' },
 	];
 
 </script>
