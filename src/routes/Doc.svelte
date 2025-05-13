@@ -1,91 +1,86 @@
-<article class="doc text-column">
-    <h1>Déployer une application</h1>
+<script lang="ts">
+    export const prerender = true;
+</script>
 
-    <!-- Étape 1 -->
-    <section class="step">
-        <h2>Étape&nbsp;1&nbsp;— Ajouter le sous‑domaine</h2>
-        <p>
-            Dans votre espace <strong>OVH</strong>, créez un enregistrement
-            <code>A</code> pour votre sous‑domaine et faites‑le pointer vers
-            <code>212.83.130.101</code>.
-        </p>
-    </section>
+<!-- ================= HERO (minimal) ================= -->
+<section class="hero" aria-label="Introduction">
+    <div class="hero-content">
+        <h1 class="headline">Build, ship<br />for the rest&nbsp;of&nbsp;us</h1>
+        <a href="/doc" class="btn-primary">Get&nbsp;Started →</a>
+    </div>
+</section>
 
-    <!-- Étape 2 -->
-    <section class="step">
-        <h2>Étape&nbsp;2&nbsp;— Se connecter au serveur</h2>
-        <pre><code class="language-bash">ssh root@212.83.130.101</code></pre>
-        <p>Puis&nbsp;:</p>
-        <pre><code class="language-bash">git clone &lt;votre‑repo.git&gt;
-cd &lt;votre‑repo&gt;</code></pre>
-    </section>
+<!-- ================= DICTION ================= -->
+<section class="definition">
+    <h2><span class="accent">/‵manifɛsto/</span></h2>
+    <p class="lead">Manifesto est un écosystème qui rassemble pipeline de déploiement, suite d’apps de productivité et gestion de projet agile afin d’accélérer la livraison logicielle.</p>
+</section>
 
-    <!-- Étape 3 -->
-    <section class="step">
-        <h2>Étape&nbsp;3&nbsp;— Créer le fichier <code>.env</code></h2>
-        <pre><code class="language-bash">touch .env
-nano .env</code></pre>
-        <pre><code class="language-env">APP_NAME=nom_de_lapp</code></pre>
-        <p><em>Le nom doit correspondre exactement au dossier de l’application.</em></p>
-    </section>
+<!-- ================= FEATURES GRID ================= -->
+<section class="features-section">
+    <div class="features-grid">
+        <article>
+            <h3>Pipeline de déploiement élégante</h3>
+            <p>Automatisation complète : Docker, Traefik, CI/CD. Vous poussez, nous livrons.</p>
+        </article>
+        <article>
+            <h3>Suite d’apps de productivité</h3>
+            <p>Chronomètre, notes, tâches… Des outils minimalistes, intégrés et cohérents.</p>
+        </article>
+        <article>
+            <h3>Gestion de projet agile</h3>
+            <p>Backlog, sprints, reporting temps réel — SCRUM sans friction pour votre équipe.</p>
+        </article>
+    </div>
+</section>
 
-    <!-- Étape 4 -->
-    <section class="step">
-        <h2>Étape&nbsp;4&nbsp;— Lancer les conteneurs</h2>
-        <pre><code class="language-bash">docker-compose up -d</code></pre>
-    </section>
-
-    <!-- Étape 5 -->
-    <section class="step">
-        <h2>Étape&nbsp;5&nbsp;— Régénérer les certificats&nbsp;HTTPS</h2>
-        <pre><code class="language-bash">cd ~/traefik
-docker-compose -f docker-compose-traefik.yml down
-docker-compose -f docker-compose-traefik.yml up -d</code></pre>
-    </section>
-
-    <h1>Mettre à jour une application</h1>
-
-    <!-- Update Étape 1 -->
-    <section class="step">
-        <h2>Étape&nbsp;1&nbsp;— Se connecter et se placer dans le dossier</h2>
-        <pre><code class="language-bash">ssh root@212.83.130.101
-cd /var/www/nom_de_lapp</code></pre>
-    </section>
-
-    <!-- Update Étape 2 -->
-    <section class="step">
-        <h2>Étape&nbsp;2&nbsp;— Mettre à jour et reconstruire</h2>
-        <pre><code class="language-bash">docker-compose down
-git pull
-docker-compose up -d --build</code></pre>
-    </section>
-</article>
+<!-- ================= CTA ================= -->
+<section class="bottom-cta">
+    <p>Ready to build something great ?</p>
+    <a href="/doc" class="btn-primary big">Déployer ma première app</a>
+</section>
 
 <style>
-    .doc {
-        gap: 2rem;
-        padding: 2rem 0;
-    }
+    :global(body) { margin: 0; }
 
-    .step {
-        background-color: rgba(255, 255, 255, 0.45);
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
-        padding: 1.5rem;
-        margin-top: 2rem;
+    /* -------- HERO -------- */
+    .hero {
+        text-align: center;
+        padding: 8rem 1.5rem 6rem;
     }
+    @media (min-width: 960px) { .hero { padding: 10rem 3rem 8rem; } }
+    .hero-content { max-width: 46rem; margin: 0 auto; }
+    .headline { font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.1; margin: 0 0 2.5rem; font-weight: 700; }
 
-    .step h2 {
-        margin-top: 0;
-        color: var(--color-theme-2);
+    /* Primary button */
+    .btn-primary {
+        display: inline-block;
+        background: var(--color-theme-2);
+        color: #fff;
+        padding: 1rem 2.6rem;
+        border-radius: 999px;
         font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: background 0.2s, transform 0.15s;
     }
+    .btn-primary:hover { background: var(--color-theme-1); transform: translateY(-2px); }
 
-    pre {
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 4px;
-        padding: 0.75rem;
-        overflow-x: auto;
-        font-size: 0.9rem;
-    }
+    /* -------- DEFINITION -------- */
+    .definition { text-align: center; padding: 6rem 1.5rem 4rem; max-width: 40rem; margin: 0 auto; }
+    .accent { color: var(--color-theme-2); font-size: 2.4rem; font-family: serif; }
+    .lead { font-size: 1.25rem; line-height: 1.6; }
+
+    /* -------- FEATURES -------- */
+    .features-section { padding: 6rem 1.5rem; background: transparent; }
+    .features-grid { display: grid; gap: 4rem 2rem; max-width: 70rem; margin: 0 auto; }
+    .features-grid h3 { font-size: 1.6rem; margin-bottom: 0.75rem; }
+    .features-grid p { font-size: 1.05rem; line-height: 1.6; }
+    @media (min-width: 900px) { .features-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* -------- BOTTOM CTA -------- */
+    .bottom-cta { text-align: center; padding: 6rem 1.5rem 8rem; }
+    .bottom-cta p { font-size: 1.8rem; margin: 0 0 2rem; font-weight: 600; }
+    .big { margin-top: 1rem; }
 </style>
+
