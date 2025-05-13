@@ -1,12 +1,8 @@
-<script lang="ts">
-    export const prerender = true;
-</script>
-
 <!-- ================= HERO (minimal) ================= -->
 <section class="hero" aria-label="Introduction">
     <div class="hero-content">
         <h1 class="headline">Build, ship<br />for the rest&nbsp;of&nbsp;us</h1>
-        <a href="/doc" class="btn-primary">Get&nbsp;Started →</a>
+        <a href="/doc/deploy" class="btn-primary">Get&nbsp;Started →</a>
     </div>
 </section>
 
@@ -37,7 +33,7 @@
 <!-- ================= CTA ================= -->
 <section class="bottom-cta">
     <p>Ready to build something great ?</p>
-    <a href="/doc" class="btn-primary big">Déployer ma première app</a>
+    <a href="/doc/deploy" class="btn-primary big">Déployer ma première app</a>
 </section>
 
 <style>
