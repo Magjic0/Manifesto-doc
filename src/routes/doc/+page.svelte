@@ -2,12 +2,6 @@
     export const prerender = true;
 </script>
 
-<!-- ░░░ Sommaire — collé en haut, centré ░░░ -->
-<nav class="toc" aria-label="Sommaire">
-    <a href="#deploy">Déployer</a>
-    <a href="#update">Mettre à jour</a>
-</nav>
-
 <article class="doc">
 
     <!-- =========== Bloc DÉPLOYER =========== -->

@@ -3,7 +3,7 @@
 	import Menu from "./menu.svelte";
 
 	let tabs = [
-		{ name: 'Doc', url: '/doc' },
+		{ name: 'Documentation', url: '/doc' },
 	];
 
 </script>
